@@ -6,23 +6,17 @@
 		<div>
 			<h1><a href=''>Blog</a></h1>
 		</div>
-		<div>
-			<h2><a href=''>Primeiro Post</a></h2>
-			<p>
-				Lorem ipsum dolor sit amet, adhuc reque praesent pro ei. In laoreet definitiones est, paulo quidam laboramus eum et, modus saepe recusabo ne ius. Saepe iriure commodo et duo, at vix quodsi assueverit. Cu suscipit complectitur quo, decore altera aliquip eu vis, omnis populo principes eu mel. Mel solum dolore eu. Per voluptua instructior ne.
-			</p>
-			<p>
-				Published: 01/02/2018, 18:38
-			</p>
-		</div>
-		<div>
-			<h2><a href=''>Segundo Post</a></h2>
-			<p>
-				Impetus lobortis pericula eu vis, per exerci ridens laboramus at. Et eum laudem eripuit habemus, doming putent euripidis vix et. Nam ea ceteros pertinacia referrentur, nam singulis interesset at. Qui graeco vocibus ut, ex summo phaedrum praesent cum.
-			</p>
-			<p>
-				Published: 01/02/2018, 18:38
-			</p>
+			{% for post in posts %}
+				<div>
+					<h1><a href=''>{{ post.title }}</a></h1>
+					<p>
+						{{ post.text|linebreaksbr }}
+					</p>
+					<p>
+						Published: {{ post.published_date}}
+					</p>
+				</div>
+			{% endfor %}
 		</div>
 	</body>
 </html>
