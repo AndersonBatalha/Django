@@ -4,5 +4,5 @@ from .models import Post
 from django.utils import timezone
 
 def post_list(request):
-	p = Post.objects.filter(published_date__lte=timezone.now()).order_by('created_date')
-	return render(request, 'blog/post_list.html', { 'posts' : p })
+	posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('created_date')
+	return render(request, 'blog/post_list.html', { 'posts' : posts })
